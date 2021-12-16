@@ -57,24 +57,16 @@ async def start(b, m):
             except Exception:
                 await b.send_message(
                     chat_id=m.chat.id,
-                    text="<i>Something Went Wrong</i> <b> <a href='http://t.me/codexmania'>CLICK HERE FOR SUPPORT </a></b>",
+                    text="<i>Something Went Wrong</i> <b> <a href='http://t.me/TeleRoid14'>[Support Group]</a></b>",
                     parse_mode="HTML",
                     disable_web_page_preview=True)
                 return
         await m.reply_text(
-            text="""
-<i>👋 ꜰɪʟᴇ ᴛᴏ ʟɪɴᴋ ʙᴏᴛ ᴡɪᴛʜ ʙᴏᴛʜ ᴅᴏᴡɴʟᴏᴀᴅ ᴀɴᴅ ꜱᴛʀᴇᴀᴍ ʟɪɴᴋ ꜱᴜᴘᴘᴏʀᴛ</i>\n
-<i>Send a file/video and see magic!<i>\n
-<i>Cʟɪᴄᴋ ᴏɴ /help ᴛᴏ ɢᴇᴛ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</i>\n
-<i><b>It is your responsibility to use wisely I dont take responsibilities of any voilations(of any kind)</i>\n
-<i><u>𝗪𝗔𝗥𝗡𝗜𝗡𝗚 🚸</u></i>\n
-<b>Dont Spam.</b>""",
+            text=START_TEXT.format(m.from_user.mention),
             parse_mode="HTML",
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton('Channel', url=f"https://t.me/TeleRoidGroup"),
-                                                                                       InlineKeyboardButton('Support', url='https://t.me/TeleRoid14') ] ]  ) )
-                                                                                       
-                                                                                       
+            reply_markup=START_BUTTONS
+              )                                                                                                                                                              
                                                                             
     else:
         if Var.UPDATES_CHANNEL != "None":
@@ -187,7 +179,7 @@ async def help_handler(bot, message):
             if user.status == "kicked":
                 await bot.send_message(
                     chat_id=message.chat.id,
-                    text="<i>Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴍᴇ. Cᴏɴᴛᴀᴄᴛ ᴛʜᴇ Dᴇᴠᴇʟᴏᴘᴇʀ</i>",
+                    text="<i>Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴍᴇ. Cᴏɴᴛᴀᴄᴛ ᴛʜᴇ Dᴇᴠᴇʟᴏᴘᴇʀ </i>",
                     parse_mode="HTML",
                     disable_web_page_preview=True
                 )
@@ -240,3 +232,31 @@ async def cb_data(bot, update):
         )
     else:
         await update.message.delete()
+
+
+START_TEXT = """
+<i>👋 Hᴇʏ,</i>{}\n
+<i>I'ᴍ Tᴇʟᴇɢʀᴀᴍ Fɪʟᴇs Sᴛʀᴇᴀᴍɪɴɢ Bᴏᴛ ᴀs ᴡᴇʟʟ Dɪʀᴇᴄᴛ Lɪɴᴋs Gᴇɴᴇʀᴀᴛᴇ</i>\n
+<i>Cʟɪᴄᴋ ᴏɴ Hᴇʟᴘ ᴛᴏ ɢᴇᴛ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</i>\n
+<i><u>𝗪𝗔𝗥𝗡𝗜𝗡𝗚 🚸</u></i>
+<b>🔞 Pʀᴏɴ ᴄᴏɴᴛᴇɴᴛꜱ ʟᴇᴀᴅꜱ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʙᴀɴ ʏᴏᴜ.</b>\n\n
+<i><b>🍃 Bᴏᴛ Mᴀɪɴᴛᴀɪɴᴇᴅ Bʏ :</b>@HelpLessBoi</i>"""
+
+HELP_TEXT = """
+<i>- Sᴇɴᴅ ᴍᴇ ᴀɴʏ ꜰɪʟᴇ (ᴏʀ) ᴍᴇᴅɪᴀ ꜰʀᴏᴍ ᴛᴇʟᴇɢʀᴀᴍ.</i>
+<i>- I ᴡɪʟʟ ᴘʀᴏᴠɪᴅᴇ ᴇxᴛᴇʀɴᴀʟ ᴅɪʀᴇᴄᴛ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ !.</i>
+<i>- Aᴅᴅ Mᴇ ɪɴ ʏᴏᴜʀ Cʜᴀɴɴᴇʟ Fᴏʀ Dɪʀᴇᴄᴛ Dᴏᴡɴʟᴏᴀᴅ Lɪɴᴋs Bᴜᴛᴛᴏɴ</i>
+<i>- Tʜɪs Pᴇʀᴍᴇᴀɴᴛ Lɪɴᴋ Wɪᴛʜ Fᴀsᴛᴇsᴛ Sᴘᴇᴇᴅ</i>\n
+<u>🔸 𝗪𝗔𝗥𝗡𝗜𝗡𝗚 🚸</u>\n
+<b>🔞 Pʀᴏɴ ᴄᴏɴᴛᴇɴᴛꜱ ʟᴇᴀᴅꜱ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʙᴀɴ ʏᴏᴜ.</b>\n
+<i>Cᴏɴᴛᴀᴄᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ (ᴏʀ) ʀᴇᴘᴏʀᴛ ʙᴜɢꜱ</i> <b>: <a href='https://t.me/PredatorHackerZ'>[ Pʀᴇᴅ∆ᴛᴏʀ ]</a></b>"""
+
+ABOUT_TEXT = """
+<b>💕 Mʏ ɴᴀᴍᴇ : FileStreamX</b>\n
+<b>🔸Vᴇʀꜱɪᴏɴ : <a href='https://telegram.me/FileStreamDXBot'>3.0.1</a></b>\n
+<b>🔹Sᴏᴜʀᴄᴇ : <a href='https://github.com/PredatorHackerzZ/TG-File2Link'>Cʟɪᴄᴋ Hᴇʀᴇ</a></b>\n
+<b>🔸GitHub : <a href='https://GitHub.com/PredatorHackerzZ'>Fᴏʟʟᴏᴡ</a></b>\n
+<b>🔹Dᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://telegram.me/TheTeleRoid'>Aᴠɪsʜᴋᴀʀ Pᴀᴛɪʟ</a></b>\n
+<b>🔸Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ : <a href='https://telegram.me/TeleRoidGroup'>[@TeleRoidGroup]</a></b>\n
+<b>🔸Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ : <a href='https://telegram.me/TeleRoid14'>[@TeleRoid14]</a></b>\n
+<b>🔸Lᴀꜱᴛ ᴜᴘᴅᴀᴛᴇᴅ : <a href='https://telegram.me/MoviesFlixers_DL'>[ 11-ᴊᴜʟʏ-21 ] 04:35 PM</a></b>"""
