@@ -19,6 +19,33 @@ def get_shortlink(url):
        pass
    return shortlink
 
+START_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('Cʜᴀɴɴᴇʟ', url='t.me/TeleRoidGroup'),
+        InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ', url='t.me/TeleRoid14')
+        ]],
+        [[
+        InlineKeyboardButton('Hᴇʟᴘ', callback_data='help'),
+        InlineKeyboardButton('Aʙᴏᴜᴛ', callback_data='about')
+        ]],
+        InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close')
+        ]]
+    )
+HELP_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('Hᴏᴍᴇ', callback_data='home'),
+        InlineKeyboardButton('Aʙᴏᴜᴛ', callback_data='about'),
+        InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close')
+        ]]
+    )
+ABOUT_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('Hᴏᴍᴇ', callback_data='home'),
+        InlineKeyboardButton('Hᴇʟᴘ', callback_data='help'),
+        InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close')
+        ]]
+    )
+
 @StreamBot.on_message(filters.command('start') & filters.private & ~filters.edited)
 async def start(b, m):
     if not await db.is_user_exist(m.from_user.id):
