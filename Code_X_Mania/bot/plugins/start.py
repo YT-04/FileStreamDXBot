@@ -164,6 +164,15 @@ async def start(b, m):
         )
 
 
+@StreamBot.on_message(filters.private & filters.command(["about"]))
+async def start(bot, update):
+    await update.reply_text(
+        text=ABOUT_TEXT.format(update.from_user.mention),
+        disable_web_page_preview=True,
+        reply_markup=ABOUT_BUTTONS
+    )
+
+
 @StreamBot.on_message(filters.command('help') & filters.private & ~filters.edited)
 async def help_handler(bot, message):
     if not await db.is_user_exist(message.from_user.id):
