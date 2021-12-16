@@ -200,7 +200,7 @@ async def help_handler(bot, message):
         except Exception:
             await bot.send_message(
                 chat_id=message.chat.id,
-                text="__Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍᴇ__ ADARSH GOEL](https://t.me/codexmania).",
+                text="__Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍᴇ__ [Pʀᴇᴅ∆ᴛᴏʀ](https://t.me/TeleRoid14).",
                 parse_mode="markdown",
                 disable_web_page_preview=True)
             return
@@ -215,3 +215,26 @@ async def help_handler(bot, message):
             ]
         )
     )
+
+@StreamBot.on_callback_query()
+async def cb_data(bot, update):
+    if update.data == "home":
+        await update.message.edit_text(
+            text=START_TEXT.format(update.from_user.mention),
+            disable_web_page_preview=True,
+            reply_markup=START_BUTTONS
+        )
+    elif update.data == "help":
+        await update.message.edit_text(
+            text=HELP_TEXT,
+            disable_web_page_preview=True,
+            reply_markup=HELP_BUTTONS
+        )
+    elif update.data == "about":
+        await update.message.edit_text(
+            text=ABOUT_TEXT,
+            disable_web_page_preview=True,
+            reply_markup=ABOUT_BUTTONS
+        )
+    else:
+        await update.message.delete()
