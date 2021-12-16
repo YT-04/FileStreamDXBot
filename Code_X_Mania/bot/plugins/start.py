@@ -21,13 +21,8 @@ def get_shortlink(url):
 
 START_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Cʜᴀɴɴᴇʟ', url='t.me/TeleRoidGroup'),
-        InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ', url='t.me/TeleRoid14')
-        ]],
-        [[
         InlineKeyboardButton('Hᴇʟᴘ', callback_data='help'),
-        InlineKeyboardButton('Aʙᴏᴜᴛ', callback_data='about')
-        ]],
+        InlineKeyboardButton('Aʙᴏᴜᴛ', callback_data='about'),
         InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close')
         ]]
     )
