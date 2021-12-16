@@ -31,6 +31,7 @@ START_BUTTONS = InlineKeyboardMarkup(
         InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close')
         ]]
     )
+
 HELP_BUTTONS = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton('Hᴏᴍᴇ', callback_data='home'),
@@ -38,6 +39,7 @@ HELP_BUTTONS = InlineKeyboardMarkup(
         InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close')
         ]]
     )
+
 ABOUT_BUTTONS = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton('Hᴏᴍᴇ', callback_data='home'),
